@@ -1,0 +1,101 @@
+
+body {
+    font-family: "Roboto", sans-serif;
+    padding: 20px;
+}
+header{
+    margin-bottom: 1rem;
+}
+.loan {
+    border: 1px solid #ccc;
+    color: gray;
+}
+.content-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.card-container .card{
+    flex: 1;
+}
+
+.card {
+    border-bottom: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    padding: 2px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.card-header{
+    border-top: 2px solid #ccc;
+}
+.card input{
+  border: none;
+}
+.card label {
+    color: gray;
+    font-size: bold;
+    margin-bottom: 0.5rem;
+}
+.payment-button {
+    background-color: #2C7865;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.payment-button:hover {
+    background-color: #3e8e41;
+}
+.debit-options {
+    display: none;
+    border: 2px solid #ccc;
+    padding: 20px;
+    width: 20%;
+    margin-left: 40px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex:1;
+    background-color: #9493d3;
+}
+
+.checkImage, .cvvImage {
+    text-align: center; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px;
+}
+.button-container .payment-button{
+    width: 100%;
+}
+.invalid {
+    border: 1px solid red!important;
+}
+
+@media screen and (min-width: 768px) {
+    .content-container{
+        flex-direction: row;;
+    }
+    .form{
+        flex: 1;
+    }
+    .button-container{
+        justify-content: flex-start;
+    }
+    .button-container .payment-button{
+        width: auto
+    }
+}

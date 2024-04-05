@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Time Loan Payment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>One-Time Loan Payment</h1>
+        <strong>Fill out the form below to complete your payment.</strong>
+    </header>
+
+    <div class="card card-header">
+        <label>Loan Account Number</label>
+        <input type="text" name="loan_account_number" id="loan_account_number" oninput="validateNumber(this)" required/>
+    </div>
+    <div class="content-container">
+        <div class="form">
+            <div class="card account">
+                <label>Type of Account:</label>
+                <div>
+                    <label for="checking">
+                        <input type="radio" name="cardtype" value="checking" checked class="radio-button"
+                            onchange={handleRadioChange(event)}>
+                        Checking
+                    </label>
+                    <label for="debitCard">
+                        <input type="radio" name="cardtype" value="debitCard" class="radio-button"
+                            onchange={handleRadioChange(event)}>
+                        Debit Card
+                    </label>
+                </div>
+            </div>
+
+            <div class="checking_input div_active checking">
+                <div class="card routing-number-section">
+                    <label for="routingNumber">Routing Number</label>
+                    <input type="text" name="routingNumber" id="routingNumber" placeholder="" oninput="validateNumber(this)" required maxlength="9"/>
+                </div>
+
+                <div class="card bank-account-number-section">
+                    <label>Bank Account Number</label>
+                    <input type="text" name="bankAccountNumber" id="bankAccountNumber"
+                        placeholder="" oninput="validateNumber(this)" required />
+                </div>
+
+                <div class="card">
+                    <label>Confirm Bank Account Number</label>
+                    <input type="text" name="confirmBankAccountNumber" id="confirmBankAccountNumber"
+                        placeholder="" oninput="validateNumber(this)" required/>
+                </div>
+            </div>
+
+            <div class="debit_input debitCard">
+                <div class="card routing-number-section">
+                    <label>Card Number *</label>
+                    <input type="text" oninput="validateNumber(this)" required/>
+                </div>
+
+                <div class="card bank-account-number-section">
+                    <label>Name On Card</label>
+                    <input type="text" required/>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <label>Expiration Date</label>
+                        <input type="text" required/>
+                    </div>
+                    <div class="card">
+                        <label>CVV</label>
+                        <input id="cvvInput" type="text" oninput="validateNumber(this)" maxlength="3" required/>
+                    </div>
+                </div>
+
+               
+            </div>
+        </div>
+
+       <div class="image-container">
+        <div class="checkImage checking">
+            <div class="caption">
+                <p>Where can I find the routing and account number?</p>
+            </div>
+            <img src="./check.png" id="checkImage">
+        </div>
+        <div class="cvvImage debitCard" style="display: none;">
+            <div class="caption">
+            <p>Where can I find the CVV number?</p>
+        </div>
+            <img src="./cvv.png" id="cvvImage" class="cvvImage">
+        </div>
+       </div>
+    </div>
+
+    <div class="button-container">
+        <button type="submit" class="payment-button" onclick="validateForm()">MAKE PAYMENT</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
